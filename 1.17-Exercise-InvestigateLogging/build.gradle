@@ -23,12 +23,15 @@ Exercises:
 
 */
 
+
 task hello(type: HelloTask)
 
 class HelloTask extends DefaultTask {
     @TaskAction
     void doAction() {
-        println 'Hello World'
+	logger.info('Beginning of TaskAction')
+        logger.lifecycle('Logging from from lifecycle method')
+	logger.info('End of TaskAction')
     }
 }
 
